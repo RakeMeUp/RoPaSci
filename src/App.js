@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from 'react';
+
+import './App.scss';
+
+import Button from './comps/button'
+import Display from './comps/display'
+
+export const choiceContext = createContext('');
 
 function App() {
+
+  const [choice, setChoice] = useState('')
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <choiceContext.Provider value={choice}>
+        <Display />
+      </choiceContext.Provider>
+      <choiceContext.Provider value={setChoice}>
+        <Button type={"Rock"} />
+        <Button type={"Paper"} />
+        <Button type={"Scissors"} />
+        <Button type={"Start"} />
+      </choiceContext.Provider>
     </div>
   );
 }

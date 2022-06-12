@@ -13,14 +13,11 @@ function App() {
   
   return (
     <div>
-      <choiceContext.Provider value={choice}>
-        <Display />
-      </choiceContext.Provider>
-      <choiceContext.Provider value={setChoice}>
+      <choiceContext.Provider value={{choice,setChoice}}>
+      {choice ? <Display /> : <Button type={"Start"} />}
         <Button type={"Rock"} />
         <Button type={"Paper"} />
         <Button type={"Scissors"} />
-        <Button type={"Start"} />
       </choiceContext.Provider>
     </div>
   );

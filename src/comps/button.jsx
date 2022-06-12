@@ -2,7 +2,7 @@ import { choiceContext } from "../App";
 import { useContext } from "react";
 
 function Button(props){
-    const setChoice = useContext(choiceContext)
+    const {choice,setChoice}= useContext(choiceContext)
 
     const handleClick = ()=>{
         setChoice(props.type)

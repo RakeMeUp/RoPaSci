@@ -1,31 +1,32 @@
-import { useState, useRef, useEffect } from "react"
+import Counter from "./counter"
+import StartButton from "./startButton"
+import { startSignalContext } from "../App";
+import { createContext, useContext, useEffect, useState } from "react"
+
+export const displayContext = createContext('');
 
 export default function Display() {
-    const Ref = useRef(null);
-    let [phase, setPhase] = useState(0);
-    let [ time, setTime ] = useState(3);
 
-    
-    const startTimer = ()=>{
-        // idk why but the ref is needed
-        if (Ref.current) clearInterval(Ref.current);
-        const interval = setInterval(() => {
-            if(Ref.current && time == 0) {
-                setPhase(++phase)
-                clearInterval(interval)
-            }
-            setTime(time--)
-        }, 1000);
-        Ref.current = interval
-    }
+    const [phase, setPhase] = useState(0)
+    let {startSignal, setStartSignal} = useContext(startSignalContext)
+
+    const phases = [
+        <StartButton type="Start"/>, 
+        <Counter/>,
+        (<div>Now</div>)
+    ]
 
     useEffect(()=>{
-        startTimer()
-    },[])
+        if(phase == 2) toggleStartSignal();
+    },[phase])
+
+    const toggleStartSignal = ()=>{
+        setStartSignal(!startSignal)
+    }
 
     return (
-        <div>
-            {time <= 0 ? phase : time}
-        </div>
+        <displayContext.Provider value={{phase, setPhase}}>
+            {phases[phase]}
+        </displayContext.Provider>
     )
 }

@@ -1,4 +1,4 @@
-import { displayContext } from "./display";
+import { displayContext } from "./main";
 import { useContext } from "react";
 
 function Button(props){

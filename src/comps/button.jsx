@@ -9,18 +9,8 @@ function Button(props){
     }
 
     return(
-        <button onClick={handleClick}>{props.type}</button>
+        <button disabled={props.isDisabled} onClick={handleClick}>{props.type}</button>
     )
 }
 
 export default Button;
-
-
-/* 
-
-1: press button
-        button has one of three values
-2: value is sent to display
-3: display changes depending on sent choice
-
-*/

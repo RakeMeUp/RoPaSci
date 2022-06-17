@@ -31,4 +31,8 @@ TODO:
   when startSignal turned off, should return Too Late! sign
 
   Also: separate components to their own folder, where css can be put
+
+  NEW:
+    add disabled to buttons as default, only take off on timeFrame
+    Pressed button stays Enabled
 */

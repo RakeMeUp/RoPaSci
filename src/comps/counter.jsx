@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { displayContext } from './display';
+import { displayContext } from './main';
 
 export default function Counter() {
 
@@ -10,21 +10,13 @@ export default function Counter() {
 		const interval = setInterval(() => {
 			if(count == 0) {
 				clearInterval(interval)
-				nextPhase();
+				setPhase(2)
 			}else{
-				reduceCount();
+				setCount(count--)
 			}
 		}, 1000);
 		return ()=> clearInterval(interval)
 	}, [])
-
-	const reduceCount=()=>{
-		setCount(count--)
-	}
-
-	const nextPhase=()=>{
-		setPhase(2)
-	}
 
 	return (
 		<div>{count}</div>

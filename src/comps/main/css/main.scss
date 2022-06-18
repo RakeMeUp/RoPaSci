@@ -1,0 +1,44 @@
+@import '../../../vars.scss';
+
+.main--display{
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main--display__start{
+    background-color: $color-darkGray;
+    border: 3px black solid;
+    font-size: 64px;
+    color: white;
+    box-shadow: 0px 10px 10px 0px #00000040;
+    cursor: pointer;
+}
+.main--display__start:hover{
+    background-color: $color-darkerGray;
+    box-shadow: 0px 20px 20px 0px #00000040;
+}
+
+.main--display__counter{
+    font-size: 128px;
+    background-color: $color-gray;
+    box-shadow: 0px 4px 4px 0px #00000040 inset;
+}
+
+.main--display__now{
+    background-color: $color-green;
+    font-size: 72px;
+    color: white;
+}
+
+.main--display__botHand{
+    background-color: $color-gray;
+    box-shadow: 0px 4px 4px 0px #00000040 inset;
+
+    img{
+        width: 160px;
+        height: 160px;
+    }
+}

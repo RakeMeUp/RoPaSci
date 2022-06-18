@@ -1,0 +1,39 @@
+@import '../../../vars.scss';
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 0px 10px 10px 0px #00000040;
+    cursor: pointer;
+
+    img{
+        width: 70px;
+        height: 70px;
+    }   
+}
+
+.btn:hover{
+    filter: brightness(.9);
+}
+.btn:active{
+    outline: 2px black solid;
+}
+
+.btn__rock{
+    background-color: $color-red;
+}
+.btn__paper{
+    background-color: $color-yellow;
+}
+.btn__scissors{
+    background-color: $color-blue;
+}
+
+.btn__notSelected{
+    background-color: $color-darkerGray;
+}

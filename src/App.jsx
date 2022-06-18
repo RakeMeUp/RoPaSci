@@ -10,7 +10,6 @@ import Reset from './comps/reset/reset';
 export const choiceContext = createContext('');
 export const signalContext = createContext('');
 export const botHandContext = createContext('');
-
 function App() {
 
   const [choice, setChoice] = useState('')
@@ -18,25 +17,6 @@ function App() {
   const [disabled, setDisabled] = useState(false)
   const [botHand, setBotHand] = useState('')
   const [outcome, setOutcome] = useState(false)
-
-  const signalSwitch = (signal) =>{
-    console.log(signal)
-    switch(true){
-      case signal == "countStart":
-        setDisabled(true)
-        break;
-      case signal === "timeFrameStart":
-        setBotHand(generateHand())
-        setDisabled(false)
-        break;
-      case signal === "timeFrameDone" && choice === '':
-        setDisabled(true)
-        break;
-      case signal === "timeFrameDone" && choice !== '':
-        setResult()
-        break;
-    }
-  }
 
   const setResult = () =>{
     let result = '';
@@ -95,6 +75,26 @@ function App() {
   }
 
   useEffect(()=>{
+    const signalSwitch = (signal) =>{
+      console.log(signal)
+      switch(true){
+        case signal === "countStart":
+          setDisabled(true)
+          break;
+        case signal === "timeFrameStart":
+          setBotHand(generateHand())
+          setDisabled(false)
+          break;
+        case signal === "timeFrameDone" && choice === '':
+          setDisabled(true)
+          break;
+        case signal === "timeFrameDone" && choice !== '':
+          setResult()
+          break;
+        default:
+          break;
+      }
+    }
     signalSwitch(signal)
   },[signal])
   

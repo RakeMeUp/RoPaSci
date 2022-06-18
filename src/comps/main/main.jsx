@@ -23,34 +23,32 @@ export default function Display({botHand}) {
     ]
 
     useEffect(()=>{
-        if(phase == 2) startTimeFrame();
+        const startTimeFrame = ()=>{
+            setSignal("timeFrameStart")
+            setTimeout(() => {
+                setSignal("timeFrameDone")
+                setPhase(3)
+            }, 1000);
+        }
+        if(phase === 2) startTimeFrame();
     },[phase])
 
     useEffect(()=>{
+        const updateImageSrc=(botHand)=>{
+            switch(botHand){
+                case 'rock':
+                    setImageSrc(rockImg)
+                    break;
+                case "scissors":
+                    setImageSrc(scissorsImg)
+                    break;
+                case "paper":
+                    setImageSrc(paperImg)
+                    break;
+            }
+        }
         updateImageSrc(botHand)
     },[botHand])
-
-    const startTimeFrame = ()=>{
-        setSignal("timeFrameStart")
-        setTimeout(() => {
-            setSignal("timeFrameDone")
-            setPhase(3)
-        }, 1000);
-    }
-    
-    const updateImageSrc=(botHand)=>{
-        switch(botHand){
-            case 'rock':
-                setImageSrc(rockImg)
-                break;
-            case "scissors":
-                setImageSrc(scissorsImg)
-                break;
-            case "paper":
-                setImageSrc(paperImg)
-                break;
-        }
-    }
 
     return (
         <signalContext.Provider value ={{setSignal}}>

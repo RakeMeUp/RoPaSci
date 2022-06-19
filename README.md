@@ -2,6 +2,9 @@
 
 The classic game, again.
 
+## [Live Site](https://gorgeous-sable-71ba0d.netlify.app/
+)
+
 ## How to play
 
 1. Press START

@@ -1,0 +1,25 @@
+@import '../../../vars.scss';
+
+.reset--btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border: none;
+    background-color: $color-green;
+    cursor: pointer;
+    img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.reset--btn:hover{
+    filter: brightness(.9);
+}
+
+.reset--btn:active{
+    outline: 1px black solid;
+}

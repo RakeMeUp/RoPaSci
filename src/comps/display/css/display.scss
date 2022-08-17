@@ -1,0 +1,22 @@
+@import '../../../vars.scss';
+
+.display--main{
+    width: 230px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-darkGray;
+    box-shadow: 0px 4px 4px 0px #00000040 inset;
+    border-radius: 30px;
+    font-size: 36px;
+}
+.display--main__win{
+    background-color: $color-green;
+}
+.display--main__lose{
+    background-color: $color-red;
+}
+.display--main__draw{
+    background-color: $color-yellow;
+}

@@ -1,35 +1,38 @@
-## Display:
 
-onPress:
+# Rock, Paper, Scissors!
 
--   starts counting back from 3,
--   after 1, green NOW shows for 1 sec,
--   this is a time window for u to press one of the buttons,
--   immediatly as you click on a choice it gives his choice.
+The classic game, again.
 
-starter button
-countdown
-greenWaiter
-display
+# [Live Site](https://gorgeous-sable-71ba0d.netlify.app)
 
--   button press
--   countdown starts
--   countdown ends
--   NOW displays
--   countdown starts
--   if button pressed while countdown goes, choice is sent
--   if button NOT pressed, "too slow" displays
+## How to play
 
-handleClick
-    starts timer
+1. Press START
+2. Wait for the countdown
+3. When you see the green screen, choose your hand
+4. Enjoy your victory / Sob in the corner by your loss.
 
+## Tech
 
-/* 
-TODO:
+- React + Sass
+- Designed in Figma
 
-  Also: separate components to their own folder, where css can be put
+## React tech
 
-  NEW:
-    add disabled to buttons as default, only take off on timeFrame
-    Pressed button stays Enabled
-*/
+- Functional components
+- Hooks:
+   - useState
+   - useContext
+   - useEffect
+
+## Sass tech
+
+- Variables (colors) in external file
+- Every component has separated CSS
+
+## Figma tech
+
+- Built with reusability in mind
+- Mobile first design
+
+![image](https://user-images.githubusercontent.com/43412231/174499361-ae8f0a77-1825-45a9-b564-f546db8be9ef.png)

@@ -11,17 +11,18 @@ export default function Counter() {
 	useEffect(()=>{
 		setSignal("countStart")
 		const interval = setInterval(() => {
-			if(count === 0) {
-				clearInterval(interval)
-				setPhase(2)
-			}else{
-				setCount(count--)
-			}
+			setCount(prev=> {
+				if(prev === 1){
+					clearInterval(interval)
+					setPhase(2)
+				}else{
+					return prev - 1;
+				}
+			})
+				
 		}, 1000);
 		return ()=> clearInterval(interval)
-		// eslint-disable-line react-hooks/exhaustive-deps
 	}, [])
-	// eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<div className='main--display main--display__counter'>
